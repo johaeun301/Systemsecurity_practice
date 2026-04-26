@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "=== checking U-15 ==="
+result=$(find / -nouser -o -nogroup 2>/dev/null)
+if [ -z "$result" ]; then
+	echo "Not found"
+else
+	echo "Detected"
+	echo "$result"
+fi
