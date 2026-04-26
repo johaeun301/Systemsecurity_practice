@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "=== Check for U-25 ==="
+result=$(find / -perm -o+w -not -path "/proc/*" 2>/dev/null)
+if [ -z "$result" ]; then
+    echo "Not found"
+else
+    count=$(echo "$result" | wc -l)
+    echo "Total: $count files found."
+fi
