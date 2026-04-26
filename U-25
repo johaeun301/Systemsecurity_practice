@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "=== Check for U-25 ==="
 result=$(find / -perm -o+w -not -path "/proc/*" 2>/dev/null)
 if [ -z "$result" ]; then
